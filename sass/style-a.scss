@@ -10,7 +10,7 @@
   top:15px;
   left:37px;
   font-weight: 300;
-  transition: all .3s;
+  @include transition(.3s);
 
   &.focus {
     color:#dddddd;
@@ -26,3 +26,122 @@
 
 
 
+// Login header
+
+
+
+.log-preview { // Styles for left hand text on the header
+  margin-top: -40px;
+
+  h4 {
+    position: relative;
+    padding-left: 40px;
+    font-size: 20px;
+    color: $brand-white;
+    margin-bottom: 13px;
+  }
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #EA9215;
+  }
+
+  & > div {
+    margin-bottom: 40px;
+  }
+
+  p {
+    padding-left: 40px;
+    color: $brand-gray;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: $font-alt-beta;
+  }
+}
+
+// Style for login form
+// --------------------
+
+.log-content {
+  padding-left: 70px;
+}
+
+.log-form {
+  margin-top:28px;
+
+  input{
+    background-color: $brand-white;
+    margin-bottom:20px;
+  }
+
+
+  .log-action {
+    font-family: $font-alt-beta;
+    font-size:16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding:15px 52px;
+    border:none;
+    border-radius: 3px;
+    color: $brand-white;
+    background-color: $brand-primary;
+    @include transition(.3s);
+
+  }
+
+  .remainder {
+    position: relative;
+    color:$brand-white;
+    margin-top: -20px;
+    margin-bottom: 35px;
+
+    a {
+      position: absolute;
+      color: $brand-white;
+      right: 5px;
+      text-decoration: underline;
+
+    }
+  }
+}
+
+.log-status {
+  h4 .inactive-w,
+  span {
+    color:$brand-white;
+  }
+}
+
+.log-option {
+  margin-top: 10px;
+  h4 {
+    margin-bottom:12px;
+    font-weight: 300;
+    font-size:20px;
+    color: $brand-white;
+    line-height: 1.2;
+  }
+  
+  & > div {
+    font-size:23px;
+    display: inline-block;
+    padding: 0 12px;
+
+    i {
+      color: $brand-white;
+      @include transition(.5s);
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+
+}
+
+
+
+// Style for login form END
+// --------------------
