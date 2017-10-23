@@ -244,6 +244,36 @@
 
 	};
 
+    // Find all labels and attach the class 'focus'
+    var formLabel,
+        formInput = $('.form-control'),
+        labels = $("label");
+
+    function makeInputAnimation(element) {
+
+        for (var i = 0; i < labels.length; i++) {
+            var newLabel = labels[i].htmlFor;
+            if (newLabel == element.id) {
+                formLabel = labels[i];
+                if (formLabel.className == 'form-label' || element.value) {
+                    formLabel.className = 'form-label focus';
+                } else {
+                    formLabel.className = 'form-label';
+                }
+            }
+        }
+
+    }
+
+    formInput.focusin(function () {
+        makeInputAnimation(this);
+
+    });
+
+    formInput.focusout(function () {
+        makeInputAnimation(this);
+    });
+
 	
 	$(function(){
 		mobileMenuOutsideClick();

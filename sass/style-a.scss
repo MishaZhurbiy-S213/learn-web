@@ -1,0 +1,28 @@
+@import 'style.scss';
+
+// Form input label
+.input-container {
+  position: relative;
+}
+
+.form-label {
+  position: absolute;
+  top:15px;
+  left:37px;
+  font-weight: 300;
+  transition: all .3s;
+
+  &.focus {
+    color:#dddddd;
+    top: 3px;
+    font-size: 12px;
+    transform: scale(0.8) translateX(0);
+  }
+}
+
+.form-control {
+  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+}
+
+
+
