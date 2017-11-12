@@ -166,6 +166,12 @@ figure {
 .fh5co-nav ul li a:active {
 	color: white;
 }
+
+#fh5co-explore > div > h3{
+	margin: 20px 0 80px 0;
+	color: #999999;
+}
+
 .fh5co-nav ul li.has-dropdown {
 	position: relative;
 }
@@ -662,7 +668,7 @@ figure {
 }
 
 .fh5co-project {
-	margin-bottom: 30px;
+	margin-bottom: 75px;
 }
 .fh5co-project > a {
 	display: block;
@@ -791,10 +797,14 @@ figure {
 .fh5co-heading-blog {
 	margin-bottom: 0;
 	background: #fff;
-	padding: 100px 40px;
+	padding: 30px 20px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-
+hr{
+	width: 1px;
+	color: transparent;
+	margin-bottom: 40px;
+}
 #fh5co-testimonial {
 	background: #efefef;
 }
@@ -904,6 +914,10 @@ figure {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	margin: 22px 0;
+}
+
+.blog-content{
+	float: none;
 }
 
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {
