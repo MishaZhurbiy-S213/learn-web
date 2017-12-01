@@ -21,55 +21,28 @@
 }
 
 .form-control {
+  //width: 50%;
   transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
 }
 
 
 
-// Login header
-
-
-
-.log-preview { // Styles for left hand text on the header
-  margin-top: -40px;
-
-  h4 {
-    position: relative;
-    padding-left: 40px;
-    font-size: 20px;
-    color: $brand-white;
-    margin-bottom: 13px;
-  }
-
-  i {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #EA9215;
-  }
-
-  & > div {
-    margin-bottom: 40px;
-  }
-
-  p {
-    padding-left: 40px;
-    color: $brand-gray;
-    font-size: 16px;
-    font-weight: 300;
-    font-family: $font-alt-beta;
-  }
-}
 
 // Style for login form
 // --------------------
 
 .log-content {
-  padding-left: 70px;
+  width: 50%;
+  margin: 0 auto;
+
+  @media screen and (max-width: $screen-sm ) {
+    width: 100%;
+  }
 }
 
 .log-form {
   margin-top:28px;
+
 
   input{
     background-color: $brand-white;
@@ -115,6 +88,11 @@
 }
 
 .log-option {
+
+  @media screen and (max-width: $screen-sm ) {
+    display: none;
+  }
+
   margin-top: 10px;
   h4 {
     margin-bottom:12px;
@@ -141,7 +119,9 @@
 
 }
 
-
+.page-hidden {
+  display:none;
+}
 
 // Style for login form END
 // --------------------

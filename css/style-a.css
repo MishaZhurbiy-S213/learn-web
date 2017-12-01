@@ -1305,30 +1305,12 @@ h1, h2, h3, h4, h5, h6, figure {
   transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s; }
 
-.log-preview {
-  margin-top: -40px; }
-  .log-preview h4 {
-    position: relative;
-    padding-left: 40px;
-    font-size: 20px;
-    color: #fff;
-    margin-bottom: 13px; }
-  .log-preview i {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #EA9215; }
-  .log-preview > div {
-    margin-bottom: 40px; }
-  .log-preview p {
-    padding-left: 40px;
-    color: #ccc;
-    font-size: 16px;
-    font-weight: 300;
-    font-family: "Roboto", sans-serif; }
-
 .log-content {
-  padding-left: 70px; }
+  width: 50%;
+  margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    .log-content {
+      width: 100%; } }
 
 .log-form {
   margin-top: 28px; }
@@ -1364,6 +1346,9 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .log-option {
   margin-top: 10px; }
+  @media screen and (max-width: 768px) {
+    .log-option {
+      display: none; } }
   .log-option h4 {
     margin-bottom: 12px;
     font-weight: 300;
@@ -1380,3 +1365,6 @@ h1, h2, h3, h4, h5, h6, figure {
       transition: 0.5s; }
       .log-option > div i:hover {
         color: #EA9215; }
+
+.page-hidden {
+  display: none; }

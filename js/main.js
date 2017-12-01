@@ -274,6 +274,31 @@
         makeInputAnimation(this);
     });
 
+    //Registration form check and show
+
+	var regFrom = function () {
+		var regButton = $('.btn-cta'),
+			pageHide = $('.container.login-off'),
+			pageShow = $('.page-show'),
+			pageStatusOn = $('header .container').hasClass('page-show');
+
+		regButton.on('click', function (e) {
+			e.preventDefault();
+			// if container has class page-show hide next row and display login form
+			if(pageStatusOn) {
+                pageShow
+					.fadeOut()
+					.css('opacity', '0');
+
+                if(pageShow.css('opacity', '0')){
+                	pageHide.delay('500').fadeIn();
+				}
+			}
+        })
+
+
+    };
+
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -287,6 +312,7 @@
 		counter();
 		parallax();
 		testimonialCarousel();
+		regFrom();
 	});
 
 
