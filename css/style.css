@@ -770,7 +770,7 @@ figure {
 
 .fh5co-heading {
 	margin-top: 60px;
-	margin-bottom: 1em;
+	margin-bottom: 0;
 }
 .fh5co-heading.fh5co-heading-sm {
 	margin-bottom: 2em;
@@ -1171,9 +1171,6 @@ hr{
 	color: #888f94;
 }
 
-#fh5co-footer {
-	background: rgb(16, 16, 16);
-}
 #fh5co-footer .fh5co-footer-links {
 	padding: 0;
 	margin: 0;
@@ -1418,9 +1415,9 @@ hr{
 }
 
 .fh5co-nav-toggle {
-	position: absolute;
+	position: fixed;
 	right: 0px;
-	top: 65px;
+	line-height: 80px;
 	z-index: 21;
 	padding: 6px 0 0 0;
 	display: block;
