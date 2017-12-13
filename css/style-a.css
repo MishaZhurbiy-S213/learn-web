@@ -1281,3 +1281,95 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .js .animate-box {
   opacity: 0; }
+
+.input-container {
+  position: relative; }
+
+.form-label {
+  position: absolute;
+  top: 15px;
+  left: 37px;
+  font-weight: 300;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .form-label.focus {
+    color: #dddddd;
+    top: 3px;
+    font-size: 12px;
+    -webkit-transform: scale(0.8) translateX(0);
+    transform: scale(0.8) translateX(0); }
+
+.form-control {
+  -webkit-transition: border-color ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s; }
+
+.log-content {
+  width: 50%;
+  margin: 50px auto; }
+  @media screen and (max-width: 768px) {
+    .log-content {
+      width: 100%;
+      margin-top: 120px; } }
+
+.log-form {
+  margin-top: 28px; }
+  .log-form input {
+    background-color: #fff;
+    margin-bottom: 20px; }
+  .log-form .log-action {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 15px 52px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #EA9215;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+  .log-form .remainder {
+    position: relative;
+    color: #fff;
+    margin-top: -20px;
+    margin-bottom: 35px; }
+    .log-form .remainder a {
+      position: absolute;
+      color: #fff;
+      right: 5px;
+      text-decoration: underline; }
+  .log-form .confirmation {
+    color: #fff;
+    font-size: 14px;
+    margin: -20px 0 20px; }
+
+.log-status h4 .inactive-w,
+.log-status span {
+  color: #fff; }
+
+.log-option {
+  margin-top: 10px; }
+  @media screen and (max-width: 768px) {
+    .log-option {
+      display: none; } }
+  .log-option h4 {
+    margin-bottom: 12px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.2; }
+  .log-option > div {
+    font-size: 23px;
+    display: inline-block;
+    padding: 0 12px; }
+    .log-option > div i {
+      color: #fff;
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+      .log-option > div i:hover {
+        color: #EA9215; }
+
+.page-hidden {
+  display: none; }

@@ -1,0 +1,137 @@
+@import 'style.scss';
+
+// Form input label
+.input-container {
+  position: relative;
+}
+
+.form-label {
+  position: absolute;
+  top:15px;
+  left:37px;
+  font-weight: 300;
+  @include transition(.3s);
+
+  &.focus {
+    color:#dddddd;
+    top: 3px;
+    font-size: 12px;
+    transform: scale(0.8) translateX(0);
+  }
+}
+
+.form-control {
+  //width: 50%;
+  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+}
+
+
+
+
+// Style for login form
+// --------------------
+
+.log-content {
+  width: 50%;
+  margin: 50px auto;
+
+  @media screen and (max-width: $screen-sm ) {
+    width: 100%;
+    margin-top: 120px;
+  }
+}
+
+.log-form {
+  margin-top:28px;
+
+
+  input{
+    background-color: $brand-white;
+    margin-bottom:20px;
+  }
+
+
+  .log-action {
+    font-family: $font-alt-beta;
+    font-size:16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding:15px 52px;
+    border:none;
+    border-radius: 3px;
+    color: $brand-white;
+    background-color: $brand-primary;
+    @include transition(.3s);
+
+  }
+
+  .remainder {
+    position: relative;
+    color:$brand-white;
+    margin-top: -20px;
+    margin-bottom: 35px;
+
+    a {
+      position: absolute;
+      color: $brand-white;
+      right: 5px;
+      text-decoration: underline;
+
+    }
+  }
+
+  .confirmation {
+    color: $brand-white;
+    font-size: 14px;
+    margin: -20px 0 20px;
+
+
+
+  }
+}
+
+.log-status {
+  h4 .inactive-w,
+  span {
+    color:$brand-white;
+  }
+}
+
+.log-option {
+
+  @media screen and (max-width: $screen-sm ) {
+    display: none;
+  }
+
+  margin-top: 10px;
+  h4 {
+    margin-bottom:12px;
+    font-weight: 300;
+    font-size:20px;
+    color: $brand-white;
+    line-height: 1.2;
+  }
+  
+  & > div {
+    font-size:23px;
+    display: inline-block;
+    padding: 0 12px;
+
+    i {
+      color: $brand-white;
+      @include transition(.5s);
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+
+}
+
+.page-hidden {
+  display:none;
+}
+
+// Style for login form END
+// --------------------

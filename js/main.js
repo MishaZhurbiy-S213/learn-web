@@ -193,8 +193,15 @@
 
 
 	// Loading page
-	var loaderPage = function() {
-		$(".fh5co-loader").fadeOut("slow");
+	var loaderPage = function(position) {
+
+		if(position === "fadein") {
+			return $(".fh5co-loader").fadeIn("slow")
+		}else if (position === "fadeout"){
+			return $(".fh5co-loader").fadeOut("slow")
+		}else {
+			return false
+		}
 	};
 
 	var counter = function() {
@@ -244,6 +251,116 @@
 
 	};
 
+
+	// Create animation for login form
+	var formAnimation = function () {
+		var inputContainer = $('.input-container'),
+			inputControl = $('.form-control'),
+		 	labelAction;
+
+		inputContainer.on('focusin', function (e) {
+			labelAction = $('label',this);
+
+			if(!labelAction.hasClass('focus')){
+				labelAction.addClass('focus');
+			}
+
+        });
+
+		inputContainer.on('focusout', function (e) {
+
+            if(labelAction.hasClass('focus') && !inputControl.val().length > 0 ){
+                labelAction.removeClass('focus');
+            }
+
+        });
+
+    };
+
+
+
+
+    //Login form form check and show
+
+	var logFrom = function () {
+		var logButton = $('.btn-cta'),
+			pageHide = $('.container.login-off'),
+			pageShow = $('.page-show'),
+			pageStatusOn = $('header .container').hasClass('page-show');
+
+		logButton.on('click', function (e) {
+			e.preventDefault();
+			// if container has class page-show hide next row and display login form
+			if(pageStatusOn) {
+                pageShow
+					.fadeOut()
+					.css('opacity', '0');
+
+                if(pageShow.css('opacity', '0')){
+                	pageHide.delay('500').fadeIn();
+				}
+			}
+        })
+    };
+
+
+	// Registration form
+
+	var signUpForm = function () {
+		var logForm = $('.sign-in-form'),
+			regForm = $('.sign-up-form'),
+			logStatus = $('.log-status'),
+			targetSibling,
+			target;
+
+
+		logStatus.on('click',function (e) {
+			e.preventDefault();
+
+			target = $(e.target);
+			targetSibling = target.siblings();
+
+			if (target.is('a') ) {
+                loaderPage("fadein"); // Show loader until sign up form is created
+
+                // Check if this button was active
+                if(target.hasClass('active')){
+                    alert('Вы не можете открыть снова эту страницу');
+                    loaderPage("fadeout");
+
+                    return false
+                }
+
+                if(target.hasClass('inactive-w')) {
+                    target
+                        .removeClass('inactive-w')
+                        .addClass('active');
+                    targetSibling
+                        .removeClass('active')
+                        .addClass('inactive-w');
+                }
+
+                if(target.hasClass('active') && target.hasClass('sign-up')){
+                    logForm.fadeOut('easy');
+                    regForm.delay('500').fadeIn('easy');
+                    loaderPage("fadeout"); // Hide the loader
+
+                    return false
+
+                }else if(target.hasClass('active') && target.hasClass('sign-in')){
+                    regForm.fadeOut('easy');
+                    logForm.delay('500').fadeIn('easy');
+                    loaderPage("fadeout"); // Hide the loader
+
+                    return false
+                }
+
+			}
+
+        });
+
+    };
+
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -252,11 +369,14 @@
 		contentWayPoint();
 		dropdown();
 		goToTop();
-		loaderPage();
+		loaderPage("fadeout");
 		counterWayPoint();
 		counter();
 		parallax();
 		testimonialCarousel();
+		logFrom();
+        formAnimation();
+        signUpForm();
 	});
 
 
