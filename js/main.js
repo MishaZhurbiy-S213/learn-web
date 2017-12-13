@@ -316,43 +316,47 @@
 
 		logStatus.on('click',function (e) {
 			e.preventDefault();
-            loaderPage("fadein"); // Show loader until sign up form is created
 
 			target = $(e.target);
-			targetSibling = target.siblings('a');
+			targetSibling = target.siblings();
 
+			if (target.is('a') ) {
+                loaderPage("fadein"); // Show loader until sign up form is created
 
-			// Check if this button was active
-			if(target.hasClass('active')){
-                alert('Вы не можете открыть снова эту страницу');
-                loaderPage("fadeout");
+                // Check if this button was active
+                if(target.hasClass('active')){
+                    alert('Вы не можете открыть снова эту страницу');
+                    loaderPage("fadeout");
 
-                return false
+                    return false
+                }
+
+                if(target.hasClass('inactive-w')) {
+                    target
+                        .removeClass('inactive-w')
+                        .addClass('active');
+                    targetSibling
+                        .removeClass('active')
+                        .addClass('inactive-w');
+                }
+
+                if(target.hasClass('active') && target.hasClass('sign-up')){
+                    logForm.fadeOut('easy');
+                    regForm.delay('500').fadeIn('easy');
+                    loaderPage("fadeout"); // Hide the loader
+
+                    return false
+
+                }else if(target.hasClass('active') && target.hasClass('sign-in')){
+                    regForm.fadeOut('easy');
+                    logForm.delay('500').fadeIn('easy');
+                    loaderPage("fadeout"); // Hide the loader
+
+                    return false
+                }
+
 			}
 
-			if(target.hasClass('inactive-w')) {
-				target
-					.removeClass('inactive-w')
-					.addClass('active');
-				targetSibling
-                    .removeClass('active')
-					.addClass('inactive-w');
-			}
-
-			if(target.hasClass('active') && target.hasClass('sign-up')){
-                	logForm.fadeOut('easy');
-                	regForm.delay('500').fadeIn('easy');
-                	loaderPage("fadeout"); // Hide the loader
-
-					return false
-
-			}else if(target.hasClass('active') && target.hasClass('sign-in')){
-                regForm.fadeOut('easy');
-                logForm.delay('500').fadeIn('easy');
-                loaderPage("fadeout"); // Hide the loader
-
-				return false
-			}
         });
 
     };
