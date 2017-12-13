@@ -33,10 +33,11 @@
 
 .log-content {
   width: 50%;
-  margin: 0 auto;
+  margin: 50px auto;
 
   @media screen and (max-width: $screen-sm ) {
     width: 100%;
+    margin-top: 120px;
   }
 }
 
@@ -77,6 +78,15 @@
       text-decoration: underline;
 
     }
+  }
+
+  .confirmation {
+    color: $brand-white;
+    font-size: 14px;
+    margin: -20px 0 20px;
+
+
+
   }
 }
 

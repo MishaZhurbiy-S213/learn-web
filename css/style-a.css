@@ -273,7 +273,7 @@ h1, h2, h3, h4, h5, h6, figure {
     z-index: 10; }
   @media screen and (max-width: 768px) {
     .fh5co-cover {
-      height: 600px; } }
+      height: 100%; } }
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
     z-index: 9;
@@ -1307,10 +1307,11 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .log-content {
   width: 50%;
-  margin: 0 auto; }
+  margin: 50px auto; }
   @media screen and (max-width: 768px) {
     .log-content {
-      width: 100%; } }
+      width: 100%;
+      margin-top: 120px; } }
 
 .log-form {
   margin-top: 28px; }
@@ -1339,6 +1340,10 @@ h1, h2, h3, h4, h5, h6, figure {
       color: #fff;
       right: 5px;
       text-decoration: underline; }
+  .log-form .confirmation {
+    color: #fff;
+    font-size: 14px;
+    margin: -20px 0 20px; }
 
 .log-status h4 .inactive-w,
 .log-status span {

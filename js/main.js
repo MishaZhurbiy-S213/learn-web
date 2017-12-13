@@ -193,8 +193,15 @@
 
 
 	// Loading page
-	var loaderPage = function() {
-		$(".fh5co-loader").fadeOut("slow");
+	var loaderPage = function(position) {
+
+		if(position === "fadein") {
+			return $(".fh5co-loader").fadeIn("slow")
+		}else if (position === "fadeout"){
+			return $(".fh5co-loader").fadeOut("slow")
+		}else {
+			return false
+		}
 	};
 
 	var counter = function() {
@@ -300,27 +307,54 @@
 	// Registration form
 
 	var signUpForm = function () {
-		var regButton = $('.sign-up');
-		var logButton = $('.sign-in');
+		var logForm = $('.sign-in-form'),
+			regForm = $('.sign-up-form'),
+			logStatus = $('.log-status'),
+			targetSibling,
+			target;
 
-		regButton.on('click', function (e) {
+
+		logStatus.on('click',function (e) {
 			e.preventDefault();
+            loaderPage("fadein"); // Show loader until sign up form is created
 
-			// Check if it was active
-			if(regButton.hasClass('active')){
-				alert('Вы не можете открыть снова эту страницу');
-				return false;
+			target = $(e.target);
+			targetSibling = target.siblings('a');
+
+
+			// Check if this button was active
+			if(target.hasClass('active')){
+                alert('Вы не можете открыть снова эту страницу');
+                loaderPage("fadeout");
+
+                return false
 			}
 
-			if(!regButton.hasClass('active')){
-				regButton
+			if(target.hasClass('inactive-w')) {
+				target
 					.removeClass('inactive-w')
 					.addClass('active');
-				logButton
-					.removeClass('active')
+				targetSibling
+                    .removeClass('active')
 					.addClass('inactive-w');
 			}
+
+			if(target.hasClass('active') && target.hasClass('sign-up')){
+                	logForm.fadeOut('easy');
+                	regForm.delay('500').fadeIn('easy');
+                	loaderPage("fadeout"); // Hide the loader
+
+					return false
+
+			}else if(target.hasClass('active') && target.hasClass('sign-in')){
+                regForm.fadeOut('easy');
+                logForm.delay('500').fadeIn('easy');
+                loaderPage("fadeout"); // Hide the loader
+
+				return false
+			}
         });
+
     };
 
 	
@@ -331,7 +365,7 @@
 		contentWayPoint();
 		dropdown();
 		goToTop();
-		loaderPage();
+		loaderPage("fadeout");
 		counterWayPoint();
 		counter();
 		parallax();

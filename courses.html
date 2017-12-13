@@ -114,28 +114,76 @@
 							<div class="display-tc">
 								<div class="log-content">
 									<div class="log-status">
-										<h4><a  class="sign-up inactive-w" href="https://google.com">Регистрация</a> <span> / </span> <a class="sign-in  active" href="https://facebook.com">Войти</a></h4>
+										<h4><a class="sign-up inactive-w" href="#">Регистрация</a> <span> / </span> <a class="sign-in  active" href="#">Войти</a></h4>
 									</div>
-									<form class="log-form" action="#" method="POST">
-										<div class="row form-group">
-											<div class="col-xs-12 input-container">
-												<label for="login" class="form-label">Username</label>
-												<input type="text" id="login" class="form-control" name="login">
+									<form class="log-form sign-in-form" action="#" method="POST">
+										<div class="form-content-remove">
+											<div class="row form-group">
+												<div class="col-xs-12 input-container">
+													<label for="login" class="form-label">Username</label>
+													<input type="text" id="login" class="form-control" name="login">
+												</div>
+											</div>
+											<div class="row form-group">
+												<div class="col-xs-12 input-container">
+													<label for="password" class="form-label">Password</label>
+													<input type="password" id="password" class="form-control" name="password">
+												</div>
+											</div>
+											<div class="checkbox remainder">
+												<label><input type="checkbox" value="remainder">Запомнить меня</label>
+												<a href="#">Забыл пароль?</a>
+											</div>
+											<div class="row form-group">
+												<div class="col-xs-12 text-center">
+													<input type="submit" name="sign-in" value="войти" class="log-action btn-primary" >
+												</div>
 											</div>
 										</div>
-										<div class="row form-group">
-											<div class="col-xs-12 input-container">
-												<label for="password" class="form-label">Password</label>
-												<input type="password" id="password" class="form-control" name="password">
+									</form>
+
+									<!-- Authentication form -->
+									<form class="log-form sign-up-form page-hidden"  action="#" method="POST">
+										<div class="form-content-remove">
+											<div class="row form-group">
+												<div class="col-xs-12 col-sm-6 input-container">
+													<label for="login" class="form-label">Имя</label>
+													<input type="text" id="firstname" class="form-control" name="login">
+												</div>
+												<div class="col-xs-12 col-sm-6 input-container">
+													<label for="login" class="form-label">Фамилия</label>
+													<input type="text" id="lastname" class="form-control" name="login">
+												</div>
 											</div>
-										</div>
-										<div class="checkbox remainder">
-											<label><input type="checkbox" value="remainder">Запомнить меня</label>
-											<a href="#">Забыл пароль?</a>
-										</div>
-										<div class="row form-group">
-											<div class="col-xs-12 text-center">
-												<input type="submit" name="sign-in" value="войти" class="log-action btn-primary" >
+
+											<div class="row form-group">
+												<div class="col-xs-12 input-container">
+													<label for="password" class="form-label">Ваш email</label>
+													<input type="email" id="sign-up-email" class="form-control" name="email">
+												</div>
+											</div>
+											<div class="row form-group">
+												<div class="col-xs-12 input-container">
+													<label for="password" class="form-label">Ваш пароль</label>
+													<input type="password" id="sign-up-password1" class="form-control" name="password1">
+												</div>
+											</div>
+											<div class="row form-group">
+												<div class="col-xs-12 input-container">
+													<label for="password" class="form-label">Повторите пороль</label>
+													<input type="password" id="sign-up-password2" class="form-control" name="password2">
+												</div>
+											</div>
+											<div class="checkbox confirmation">
+												<label><input type="checkbox" value="remainder">
+													<span>Я соглашаюсь с <a href="#">Условиям</a> и <a href="#">Правилам</a> конфиденцальности</span>
+												</label>
+
+											</div>
+											<div class="row form-group">
+												<div class="col-xs-12 text-center">
+													<input type="submit" name="sign-in" value="войти" class="log-action btn-primary" >
+												</div>
 											</div>
 										</div>
 									</form>
