@@ -244,45 +244,44 @@
 
 	};
 
-    // Find all labels and attach the class 'focus'
-    var formLabel,
-        formInput = $('.form-control'),
-        labels = $("label");
 
-    function makeInputAnimation(element) {
+	// Create animation for login form
+	var formAnimation = function () {
+		var inputContainer = $('.input-container'),
+			inputControl = $('.form-control'),
+		 	labelAction;
 
-        for (var i = 0; i < labels.length; i++) {
-            var newLabel = labels[i].htmlFor;
-            if (newLabel == element.id) {
-                formLabel = labels[i];
-                if (formLabel.className == 'form-label' || element.value) {
-                    formLabel.className = 'form-label focus';
-                } else {
-                    formLabel.className = 'form-label';
-                }
+		inputContainer.on('focusin', function (e) {
+			labelAction = $('label',this);
+
+			if(!labelAction.hasClass('focus')){
+				labelAction.addClass('focus');
+			}
+
+        });
+
+		inputContainer.on('focusout', function (e) {
+
+            if(labelAction.hasClass('focus') && !inputControl.val().length > 0 ){
+                labelAction.removeClass('focus');
             }
-        }
 
-    }
+        });
 
-    formInput.focusin(function () {
-        makeInputAnimation(this);
+    };
 
-    });
 
-    formInput.focusout(function () {
-        makeInputAnimation(this);
-    });
 
-    //Registration form check and show
 
-	var regFrom = function () {
-		var regButton = $('.btn-cta'),
+    //Login form form check and show
+
+	var logFrom = function () {
+		var logButton = $('.btn-cta'),
 			pageHide = $('.container.login-off'),
 			pageShow = $('.page-show'),
 			pageStatusOn = $('header .container').hasClass('page-show');
 
-		regButton.on('click', function (e) {
+		logButton.on('click', function (e) {
 			e.preventDefault();
 			// if container has class page-show hide next row and display login form
 			if(pageStatusOn) {
@@ -295,8 +294,33 @@
 				}
 			}
         })
+    };
 
 
+	// Registration form
+
+	var signUpForm = function () {
+		var regButton = $('.sign-up');
+		var logButton = $('.sign-in');
+
+		regButton.on('click', function (e) {
+			e.preventDefault();
+
+			// Check if it was active
+			if(regButton.hasClass('active')){
+				alert('Вы не можете открыть снова эту страницу');
+				return false;
+			}
+
+			if(!regButton.hasClass('active')){
+				regButton
+					.removeClass('inactive-w')
+					.addClass('active');
+				logButton
+					.removeClass('active')
+					.addClass('inactive-w');
+			}
+        });
     };
 
 	
@@ -312,7 +336,9 @@
 		counter();
 		parallax();
 		testimonialCarousel();
-		regFrom();
+		logFrom();
+        formAnimation();
+        signUpForm();
 	});
 
 
